@@ -31,7 +31,7 @@ class DoctorsController < ApplicationController
     private
 
     def set_doctor
-      @doctor = Doctor.find(paramd[:id])
+      @doctor = Doctor.find(params[:id])
     end
 
     def doctor_params

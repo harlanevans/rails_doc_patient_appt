@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  root "appointments#index"
+  get 'appointments/index'
+  get 'appointments/new'
+  root "doctors#index"
 
   resources :patients
-  resources :doctors
+  resources :doctors do
+    resources :appointments, only: [:index, :new, :create, :destroy]
+  end
 end
