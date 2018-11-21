@@ -1,2 +1,23 @@
-<h1>Appointments#index</h1>
-<p>Find me in app/views/appointments/index.html.erb</p>
+<h1><%= @doctor.name %>: Appointments</h1>
+<%= link_to 'Add Appointment', new_doctor_appointment_path(@doctor) %>
+<hr />
+<table class="striped">
+<thead>
+<tr>
+<th>Patient Name</th>
+<th>Appt Date</th>
+<th>App Time</th>
+</tr>
+</thead>
+
+<tbody>
+<% @appointments.each do |appt| %>
+  <tr>
+  <td><%= appt.patient.full_name%> </td>
+  <td><%= appt.date.strftime('%a, %b, %d, %Y') %></td>
+  <td><%= appt.time.strftime('%l:%M %p') %></td>
+  <td><%= link_to 'Delete Appointment', doctor_appointment_path(@doctor, appt), method: :delete, class:"btn #ff6f00 amber darken-4" %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

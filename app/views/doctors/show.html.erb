@@ -1,1 +1,8 @@
-<h1>Show Doctors Here</h1>
+<h1><%= @doctor.name %></h1>
+<hr />
+<br />
+<%= link_to "Appointments", doctor_appointments_path(@doctor), class: "btn #ff6f00 amber darken-4" %>
+<br />
+<br />
+<br />
+<%= link_to "Delete Doctor", @doctor, method: :delete, class: "btn #ff6f00 amber darken-4" %>

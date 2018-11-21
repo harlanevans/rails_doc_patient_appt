@@ -1,11 +1,16 @@
 <h1>Doctors</h1>
-  <%= link_to "Add a New Doctor", new_doctor_path %>
+  <%= link_to "Add a New Doctor", new_doctor_path, class: 'btn #ff6f00 amber darken-4' %>
   <hr />
   <h2><%= @doctors.length <= 0 ? "No Doctors" : "" %></h2>
   <ul>
     <% @doctors.each do |doctor| %>
       <li>
-        <% link_to doctor.name, doctor %>
-      </li>
+      <br />
+        <%= link_to doctor.name, doctor_path(doctor), class: 'btn #f44336 red' %>
+        <br />
+        <br />
+        Number of Patients: <%= doctor.patients.count %>
+        <hr />
+        </li>
       <% end %>
   </ul>

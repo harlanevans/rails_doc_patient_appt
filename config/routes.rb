@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'appointments/index'
   get 'appointments/new'
-  root "doctors#index"
+  root "appointments#index"
 
   resources :patients
   resources :doctors do
