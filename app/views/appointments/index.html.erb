@@ -1,12 +1,20 @@
-<h1><%= @doctor.name %>: Appointments</h1>
-<%= link_to 'Add Appointment', new_doctor_appointment_path(@doctor) %>
+<div class= "container, left-align">
+    <h1>Doctor: <i><%= @doctor.name %></i></h1>
+    </div>
+    <br />
+<%= link_to 'Add Appointment', new_doctor_appointment_path(@doctor), class: "ui inverted blue button" %>
+<%=  link_to 'Delete This Doctor', @doctor, method: :delete, class: "ui inverted red button" %>
+<br />
+<br />
 <hr />
-<table class="striped">
+<h3>Appointments: </h3>
+<table class="ui celled table">
 <thead>
 <tr>
 <th>Patient Name</th>
-<th>Appt Date</th>
-<th>App Time</th>
+<th>Appointment Date</th>
+<th>Appointment Time</th>
+<th>Delete Appointment</th>
 </tr>
 </thead>
 
@@ -16,7 +24,7 @@
   <td><%= appt.patient.full_name%> </td>
   <td><%= appt.date.strftime('%a, %b, %d, %Y') %></td>
   <td><%= appt.time.strftime('%l:%M %p') %></td>
-  <td><%= link_to 'Delete Appointment', doctor_appointment_path(@doctor, appt), method: :delete, class:"btn #ff6f00 amber darken-4" %></td>
+  <td><%= link_to 'Delete Appointment', doctor_appointment_path(@doctor, appt), method: :delete, class: "ui inverted red button" %></td>
     </tr>
   <% end %>
 </tbody>

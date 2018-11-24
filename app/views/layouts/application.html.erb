@@ -5,6 +5,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script>
+    $(document).ready(function() {
+       $('select').material_select();
+    });
+ </script>
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -16,3 +22,4 @@
       </div>
   </body>
 </html>
+

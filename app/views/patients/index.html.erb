@@ -1,10 +1,16 @@
 <h1>Patients Page</h1>
-<%= link_to "Add Patient", new_patient_path %>
+<br>
+<%= link_to "Add Patient", new_patient_path, class: "ui basic blue button" %>
+<br>
+<br>
 <hr />
-<ul>
+<tbody> 
   <% @patients.each do |patient| %>
-    <li>
-      <%= link_to patient.full_name, patient %>
-    </li>
-    <% end %>
-</ul>
+    <tr>
+      <br>
+        <%= link_to patient.full_name, patient, class: "ui inverted blue button" %>
+      <br>
+      <td><%= button_to 'Remove', {:controller => :patients, :action => 'destroy', :id => patient.id }, :method => :delete, class:"ui button red inverted" %></td>
+      </tr>
+  <% end %>
+</tbody>

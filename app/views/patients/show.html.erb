@@ -1,15 +1,11 @@
 <h1>Patient: </h1>
-<h2><%= @patient.full_name %></h2>
+<h2><i><%= @patient.full_name %></i></h2>
 <hr />
 <h2>Doctors:</h2>
-<ul>
   <% @appointments.each do |appt| %>
-    <li>
-      <%= link_to appt.doctor.name, doctor_path(appt.doctor) %>
-    </li>
+      <%= link_to appt.doctor.name, doctor_path(appt.doctor), class: "ui blue button" %>
   <% end %>
-</ul>
 <br />
 <br />
 <br />
-<%= link_to 'Delete Patient', @patient, method: :delete, class: "btn #ff6f00 amber darken-4" %>
+<%= link_to 'Delete Patient', @patient, method: :delete, class: "ui inverted red button" %>

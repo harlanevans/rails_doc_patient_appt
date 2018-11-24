@@ -1,16 +1,14 @@
 <h1>Doctors</h1>
-  <%= link_to "Add a New Doctor", new_doctor_path, class: 'btn #ff6f00 amber darken-4' %>
+<%= link_to "Add a New Doctor", new_doctor_path, class: 'ui inverted small blue button' %>
+<br />
+<br />
+<p>To delete a doctors information, please go to the patients tab.</p>
   <hr />
   <h2><%= @doctors.length <= 0 ? "No Doctors" : "" %></h2>
-  <ul>
     <% @doctors.each do |doctor| %>
-      <li>
-      <br />
-        <%= link_to doctor.name, doctor_path(doctor), class: 'btn #f44336 red' %>
+        <%= link_to doctor.name, doctor_appointments_path(doctor), class: 'ui blue button' %>
         <br />
         <br />
-        Number of Patients: <%= doctor.patients.count %>
+        Number of Patients: <%= doctor.patients.count  %>
         <hr />
-        </li>
       <% end %>
-  </ul>
