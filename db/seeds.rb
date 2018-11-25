@@ -1,4 +1,4 @@
-2.times do
+5.times do
   doctor = Doctor.create(
     name: Faker::Name.name 
   )

@@ -1,5 +1,6 @@
-<h1>Patient: </h1>
-<h2><i><%= @patient.full_name %></i></h2>
+<h1>Patient: <i><%= @patient.full_name %></i></h1>
+<br />
+<%= link_to 'Back to All Patients', patients_path, class: "ui inverted blue button" %>
 <hr />
 <h2>Doctors:</h2>
   <% @appointments.each do |appt| %>
