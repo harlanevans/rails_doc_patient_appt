@@ -6,9 +6,12 @@
   <hr />
   <h2><%= @doctors.length <= 0 ? "No Doctors" : "" %></h2>
     <% @doctors.each do |doctor| %>
-        <%= link_to doctor.name, doctor_appointments_path(doctor), class: 'ui blue button' %>
+  <button class="ui basic blue button">
+  <i class="icon user"></i>
+  <%= link_to doctor.name, doctor_appointments_path(doctor) %>
+  </button>
         <br />
         <br />
-        Number of Patients: <%= doctor.patients.count  %>
+        <h3>Number of Patients: </h3><%= doctor.patients.count  %>
         <hr />
       <% end %>
